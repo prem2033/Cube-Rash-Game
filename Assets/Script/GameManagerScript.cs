@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManagerScript : MonoBehaviour
 {
     bool gameended =false;
+    public GameObject completeleveUI;
+    public playerMovement movement;
         public void EndGame(){
             if(gameended==false){
                Debug.Log("Game Over");
@@ -17,5 +19,10 @@ public class GameManagerScript : MonoBehaviour
     }
     void restart(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void levelComplete(){
+         Debug.Log("level complete");
+         completeleveUI.SetActive(true);
+         movement.enabled=false;
     }
 }
