@@ -10,7 +10,8 @@ public class CollisonDetect : MonoBehaviour
     void OnCollisionEnter(Collision other) {
         if(other.collider.tag=="obstacle"){
         Debug.Log(other.collider.name);
-            movement.enabled=false;
+             movement.enabled=false;
+             FindObjectOfType<GameManagerScript>().EndGame();
         }
     }
 }
