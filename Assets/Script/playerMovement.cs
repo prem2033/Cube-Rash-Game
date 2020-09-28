@@ -25,5 +25,9 @@ public class playerMovement : MonoBehaviour
         if(Input.GetKey("a") ){
             rigidbody.AddForce(-sidewaysForce* Time.deltaTime,0,0,ForceMode.VelocityChange);//if 10 frame the value ==0.1 if 20 then 0.2
         }
+        if(rigidbody.position.y<-1f){
+             FindObjectOfType<GameManagerScript>().EndGame();
+
+        }
     }
 }
